@@ -1,0 +1,14 @@
+PROCEDURE Insertion_sort(arr : ARRAY_OF integer[7])
+VAR
+        i,j,pos: INTEGER ;
+BEGIN
+        FOR i FROM 1 TO arr.length STEP 1  DO
+            pos := arr[i];
+            j := i-1;
+            WHILE (j>= 0 && arr[j] > pos) DO
+                arr[j+1] := arr[j];
+                j:= j-1;
+            END_WHILE
+            arr[j+1] := pos ;
+        END_FOR  
+END
