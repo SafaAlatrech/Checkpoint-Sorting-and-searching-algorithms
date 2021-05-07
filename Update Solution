@@ -1,0 +1,30 @@
+PROCEDURE read_array()
+    VAR
+    i,n:INTEGER;
+    tab: ARRAY_OF INTEGER[];
+BEGIN
+ Write ("please give the length of the array");
+            Read(n);
+    FOR i FROM 0 TO n-1 DO
+            Write ("please give the element",i+1,"of the array");
+            Read(tab[i]);
+    END_FOR
+END
+
+ALGORITHM Insertion_sort
+VAR 
+    i,j,Aux:INTEGER:=0;
+    tab: ARRAY_OF INTEGER[];
+
+BEGIN
+    read_array();
+FOR i FROM 1 TO tab.length-1 DO
+    Aux:=tab[i];
+    j:=i-1;
+    WHILE ((j>=0) and (tab[j]>Aux)) DO
+        tab[j+1]:=tab[j];
+        j := j-1;
+    END_WHILE
+    tab[j+1]:=Aux;
+END_FOR
+END
